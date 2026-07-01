@@ -1,0 +1,52 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navLinksContainer = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  /* ==========================================
+     1. SCROLL SENSING EFFECT
+     ========================================== */
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+
+  // Run scroll check on load and attach to scroll listener
+  handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  /* ==========================================
+     2. RESPONSIVE MOBILE DRAWER TOGGLE
+     ========================================== */
+  const toggleMenu = () => {
+    const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+    mobileToggle.setAttribute('aria-expanded', !isExpanded);
+    mobileToggle.classList.toggle('active');
+    navLinksContainer.classList.toggle('active');
+    
+    // Prevent background scrolling when menu drawer is open
+    document.body.style.overflow = !isExpanded ? 'hidden' : '';
+  };
+
+  mobileToggle.addEventListener('click', toggleMenu);
+
+  /* ==========================================
+     3. DISMISS MENU ON LINK CLICK & UPDATE ACTIVE
+     ========================================== */
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Clean up mobile drawer states if open
+      if (navLinksContainer.classList.contains('active')) {
+        toggleMenu();
+      }
+
+      // Update manual active states immediately on click
+      navLinks.forEach(item => item.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+});
