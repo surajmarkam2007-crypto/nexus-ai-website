@@ -1,0 +1,43 @@
+# Antigravity Ignore File
+# These files/folders will NOT be scanned by AI agents
+# This saves credits and speeds up indexing
+
+# Heavy media files (videos)
+videos/
+*.mp4
+*.mov
+*.webm
+*.avi
+
+# Image files (AI doesn't need to read binary images)
+images/**/*.png
+images/**/*.jpg
+images/**/*.jpeg
+images/**/*.webp
+images/**/*.gif
+
+# Daily development files (only scan final index.html)
+dev/
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Node modules (if any)
+node_modules/
+
+# Git internal files
+.git/
+
+# NOTE: AI agents SHOULD scan:
+# ✅ AGENTS.md
+# ✅ index.html
+# ✅ css/*.css
+# ✅ js/*.js
+# ✅ docs/*.md
+# ✅ components/*.html
