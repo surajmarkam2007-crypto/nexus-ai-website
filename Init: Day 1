@@ -1,0 +1,33 @@
+Create one new file:
+        Name: index.html
+        Content:
+```html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>NEXUS AI - Premium AI Services</title>
+            <link rel="stylesheet" href="css/main.css">
+        </head>
+        <body>
+            <!-- Day 1: Navbar Only -->
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="logo">NEXUS AI</div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="whatsapp-btn">WhatsApp</button>
+                </div>
+            </nav>
+            <script src="js/main.js"></script>
+        </body>
+        </html>
+```
+        
+Step 5: Commit message: "Init: Day 1 - Navbar structure"
+        → "Commit changes"
